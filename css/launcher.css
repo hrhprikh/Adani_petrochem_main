@@ -1,0 +1,191 @@
+/* ===================================================
+   ADANI PETROCHEM — Application Launcher (shadcn cards)
+   =================================================== */
+
+.launcher {
+  background: var(--background-subtle);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.launcher::before { display: none; }
+
+/* ── Grid ── */
+.launcher__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* Remove bento asymmetry — uniform clean grid, except first card */
+.launcher__grid .app-card:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.launcher__grid .app-card:nth-child(5),
+.launcher__grid .app-card:nth-child(8),
+.launcher__grid .app-card:nth-child(12),
+.launcher__grid .app-card:nth-child(16),
+.launcher__grid .app-card:nth-child(19) {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+/* ── Card ── */
+.app-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space-6);
+  background: var(--card);
+  cursor: pointer;
+  transition: background var(--transition);
+  border: none;
+  border-radius: 0;
+  backdrop-filter: none;
+}
+
+.app-card::before,
+.app-card::after { display: none; }
+
+.app-card:hover {
+  background: var(--background-muted);
+}
+
+/* ── Card Top ── */
+.app-card__top {
+  position: relative;
+  z-index: 1;
+}
+
+.app-card__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-muted);
+  border: 1px solid var(--border);
+  margin-bottom: var(--space-4);
+  transition: none;
+}
+
+.app-card:hover .app-card__icon {
+  transform: none;
+}
+
+.app-card__icon svg {
+  width: 18px;
+  height: 18px;
+  color: var(--foreground-secondary);
+}
+
+.app-card__title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--foreground);
+  margin-bottom: var(--space-1);
+  line-height: var(--lh-snug);
+}
+
+.app-card__desc {
+  font-size: var(--fs-xs);
+  color: var(--foreground-muted);
+  line-height: var(--lh-normal);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Large card text sizing */
+.launcher__grid .app-card:nth-child(1) .app-card__title {
+  font-size: var(--fs-lg);
+}
+
+.launcher__grid .app-card:nth-child(1) .app-card__desc {
+  -webkit-line-clamp: 4;
+  font-size: var(--fs-sm);
+  color: var(--foreground-secondary);
+}
+
+.launcher__grid .app-card:nth-child(1) .app-card__icon {
+  width: 44px;
+  height: 44px;
+}
+
+.launcher__grid .app-card:nth-child(1) .app-card__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ── Card Bottom ── */
+.app-card__bottom {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-4);
+}
+
+.app-card__tag {
+  font-size: 11px;
+  color: var(--foreground-muted);
+  padding: 2px 8px;
+  background: var(--background-muted);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-light);
+  font-weight: var(--fw-medium);
+}
+
+.app-card__arrow {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+  opacity: 0;
+}
+
+.app-card__arrow svg {
+  width: 13px;
+  height: 13px;
+  color: var(--foreground-secondary);
+  transition: transform var(--transition);
+}
+
+.app-card:hover .app-card__arrow {
+  opacity: 1;
+}
+
+.app-card:hover .app-card__arrow svg {
+  transform: translateX(2px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .launcher__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .launcher__grid { grid-template-columns: repeat(2, 1fr); }
+  .launcher__grid .app-card:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .launcher__grid { grid-template-columns: 1fr; }
+  .launcher__grid .app-card:nth-child(1) { grid-column: span 1; }
+}

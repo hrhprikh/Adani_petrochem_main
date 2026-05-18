@@ -1,0 +1,111 @@
+/* ===================================================
+   ADANI PETROCHEM — Activity (Clean)
+   =================================================== */
+
+.activity {
+  background: var(--background);
+}
+
+.activity__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-10);
+}
+
+.activity__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.activity__col-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border);
+}
+
+.activity__col-title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--foreground);
+}
+
+.activity__col-action {
+  font-size: var(--fs-xs);
+  color: var(--foreground-muted);
+  transition: color var(--transition);
+}
+
+.activity__col-action:hover { color: var(--foreground); }
+
+.activity__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.activity__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  transition: background var(--transition);
+  cursor: pointer;
+}
+
+.activity__item:hover {
+  background: var(--background-muted);
+}
+
+.activity__item-accent {
+  width: 2px;
+  min-height: 32px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+.activity__item-accent--blue { background: var(--accent); }
+.activity__item-accent--green { background: var(--success); }
+.activity__item-accent--amber { background: var(--warning); }
+.activity__item-accent--purple { background: #8b5cf6; }
+
+.activity__item-body { flex: 1; min-width: 0; }
+
+.activity__item-title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--foreground);
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.activity__item-meta {
+  font-size: var(--fs-xs);
+  color: var(--foreground-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.activity__item-time,
+.activity__item-status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.activity__item-time svg,
+.activity__item-status svg {
+  width: 12px;
+  height: 12px;
+}
+
+@media (max-width: 768px) {
+  .activity__grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,194 @@
+/* ===================================================
+   ADANI PETROCHEM — Navbar (shadcn-style)
+   =================================================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-height);
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow var(--transition);
+}
+
+.navbar.scrolled {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 0 var(--space-8);
+}
+
+/* ── Brand ── */
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.navbar__logo {
+  width: 130px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.navbar__brand-name {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+  line-height: 1.3;
+}
+
+.navbar__brand-sub {
+  font-size: 11px;
+  font-weight: var(--fw-semibold);
+  color: var(--foreground-muted);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* ── Center: Value Chain Pipeline ── */
+.navbar__center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar__pipeline {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.navbar__pipeline-step {
+  font-size: 13px;
+  font-weight: var(--fw-semibold);
+  color: var(--foreground); /* Black color */
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 0 2px;
+  white-space: nowrap;
+  transition: color var(--transition);
+}
+
+.navbar__pipeline-step--end {
+  color: var(--foreground);
+  font-weight: var(--fw-bold);
+}
+
+/* Flow connector */
+.navbar__pipeline-flow {
+  position: relative;
+  width: 36px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  margin: 0 2px;
+}
+
+.navbar__pipeline-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--border);
+  transform: translateY(-50%);
+}
+
+/* Animated flowing dot */
+.navbar__pipeline-dot {
+  position: absolute;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--foreground);
+  transform: translateY(-50%);
+  animation: pipeline-flow 2s ease-in-out infinite;
+}
+
+/* Stagger the dot animations */
+.navbar__pipeline-flow:nth-of-type(2) .navbar__pipeline-dot { animation-delay: 0s; }
+.navbar__pipeline-flow:nth-of-type(4) .navbar__pipeline-dot { animation-delay: 0.35s; }
+.navbar__pipeline-flow:nth-of-type(6) .navbar__pipeline-dot { animation-delay: 0.7s; }
+.navbar__pipeline-flow:nth-of-type(8) .navbar__pipeline-dot { animation-delay: 1.05s; }
+.navbar__pipeline-flow:nth-of-type(10) .navbar__pipeline-dot { animation-delay: 1.4s; }
+
+@keyframes pipeline-flow {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    left: calc(100% - 4px);
+    opacity: 0;
+  }
+}
+
+/* ── Controls ── */
+.navbar__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-shrink: 0;
+}
+
+.navbar__datetime {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--fs-sm);
+  color: var(--foreground-secondary);
+}
+.divider-line {
+    width: 1px;
+    height: 14px;
+    background: #000000ff;
+}
+
+.navbar__date {
+  color: blue;
+  font-weight: bold;
+  font-size: var(--fs-md);
+  padding-right: var(--space-3);
+  border-right: 1px solid var(--border);
+}
+
+.navbar__clock {
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--fw-medium);
+  color: blue;
+  font-size: var(--fs-md);
+}
+
+@media (max-width: 768px) {
+  .navbar__center, .navbar__date { display: none; }
+}

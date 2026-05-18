@@ -1,0 +1,131 @@
+/* ===================================================
+   ADANI PETROCHEM — Leaders Section
+   =================================================== */
+
+.leaders {
+  background: var(--background-muted); /* Give a slight contrast to the white cards */
+  border-bottom: 1px solid var(--border);
+}
+
+.leaders__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+/* ── Leader Card ── */
+.leader-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+
+.leader-card:hover {
+  border-color: var(--border-accent);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+}
+
+/* ── Full-Bleed Image ── */
+.leader-card__avatar {
+  width: 100%;
+  height: 340px;
+  background: #f1f1f1; /* Fallback */
+  display: block;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.leader-card__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center; /* Ensures heads are not cut off */
+  transition: transform 0.5s ease;
+}
+
+.leader-card:hover .leader-card__avatar img {
+  transform: scale(1.03);
+}
+
+/* ── Info Typography ── */
+.leader-card__name {
+  font-size: 24px;
+  font-weight: var(--fw-bold);
+  color: var(--foreground);
+  margin: 0;
+  padding: var(--space-6) var(--space-6) var(--space-1);
+  letter-spacing: var(--ls-tight);
+}
+
+.leader-card__role {
+  font-size: 13px;
+  font-weight: var(--fw-bold);
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+  padding: 0 var(--space-6) var(--space-4);
+}
+
+/* ── Divider ── */
+.leader-card__divider {
+  width: 40px;
+  height: 2px;
+  background: var(--border);
+  margin: 0 var(--space-6) var(--space-5);
+}
+
+/* ── Quote / Vision ── */
+.leader-card__quote {
+  font-size: 15px;
+  color: var(--foreground-secondary);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 var(--space-6) var(--space-8);
+  position: relative;
+}
+
+/* Optional subtle quote mark */
+.leader-card__quote::before {
+  content: '\201C';
+  font-family: Georgia, serif;
+  font-size: 60px;
+  line-height: 1;
+  color: var(--border);
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  font-style: normal;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.leader-card__quote * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .leaders__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .leaders__grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .leader-card__avatar {
+    height: 300px;
+  }
+}

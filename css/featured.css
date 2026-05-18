@@ -1,0 +1,109 @@
+/* ===================================================
+   ADANI PETROCHEM — Featured Modules (Clean cards)
+   =================================================== */
+
+.featured {
+  background: var(--background);
+  border-top: 1px solid var(--border);
+}
+
+.featured::before { display: none; }
+
+.featured__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.featured__card {
+  position: relative;
+  padding: var(--space-8);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 280px;
+}
+
+.featured__card::before { display: none; }
+
+.featured__card:hover {
+  border-color: var(--foreground-muted);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.featured__card-content { position: relative; z-index: 1; }
+
+.featured__card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-muted);
+  border: 1px solid var(--border);
+  margin-bottom: var(--space-5);
+}
+
+.featured__card-icon svg {
+  width: 20px;
+  height: 20px;
+  color: var(--foreground-secondary);
+}
+
+.featured__card-title {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+  color: var(--foreground);
+  margin-bottom: var(--space-2);
+  letter-spacing: var(--ls-tight);
+}
+
+.featured__card-desc {
+  font-size: var(--fs-sm);
+  color: var(--foreground-secondary);
+  line-height: var(--lh-normal);
+  margin-bottom: var(--space-5);
+}
+
+.featured__card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--foreground-secondary);
+  transition: all var(--transition);
+}
+
+.featured__card:hover .featured__card-link {
+  color: var(--foreground);
+}
+
+.featured__card-link svg { width: 13px; height: 13px; }
+
+.featured__card:hover .featured__card-link svg {
+  transform: translateX(2px);
+}
+
+/* Wide first card */
+.featured__grid .featured__card:first-child {
+  grid-column: span 2;
+}
+
+@media (max-width: 1024px) {
+  .featured__grid { grid-template-columns: repeat(2, 1fr); }
+  .featured__grid .featured__card:first-child { grid-column: span 2; }
+}
+
+@media (max-width: 640px) {
+  .featured__grid { grid-template-columns: 1fr; }
+  .featured__grid .featured__card:first-child { grid-column: span 1; }
+  .featured__card { min-height: 220px; padding: var(--space-6); }
+}

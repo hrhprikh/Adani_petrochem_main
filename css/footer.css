@@ -1,0 +1,109 @@
+/* ===================================================
+   ADANI PETROCHEM — Footer (Minimal)
+   =================================================== */
+
+.footer {
+  background: var(--background-subtle);
+  border-top: 1px solid var(--border);
+}
+
+.footer__top {
+  padding: var(--space-12) 0;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--space-10);
+}
+
+.footer__brand-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.footer__brand-logo svg { width: 24px; height: 24px; }
+
+.footer__brand-logo span {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--foreground);
+}
+
+.footer__brand-desc {
+  font-size: var(--fs-sm);
+  color: var(--foreground-muted);
+  line-height: var(--lh-normal);
+  max-width: 320px;
+  margin-bottom: var(--space-4);
+}
+
+.footer__env {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 3px 10px;
+  background: var(--success-bg);
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  color: var(--success);
+  font-weight: var(--fw-medium);
+}
+
+.footer__col-title {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--foreground);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.footer__link {
+  font-size: var(--fs-sm);
+  color: var(--foreground-muted);
+  transition: color var(--transition);
+}
+
+.footer__link:hover { color: var(--foreground); }
+
+.footer__bottom {
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--fs-xs);
+  color: var(--foreground-muted);
+}
+
+.footer__bottom-links {
+  display: flex;
+  gap: var(--space-5);
+}
+
+.footer__bottom-links a {
+  color: var(--foreground-muted);
+  transition: color var(--transition);
+}
+
+.footer__bottom-links a:hover { color: var(--foreground-secondary); }
+
+@media (max-width: 768px) {
+  .footer__top { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .footer__top { grid-template-columns: 1fr; }
+  .footer__bottom {
+    flex-direction: column;
+    gap: var(--space-2);
+    text-align: center;
+  }
+}

@@ -1,0 +1,62 @@
+/* ===================================================
+   ADANI PETROCHEM — Status Strip (Minimal)
+   =================================================== */
+
+.status-strip {
+  background: var(--background-subtle);
+  border-bottom: 1px solid var(--border);
+}
+
+.status-strip::after { display: none; }
+
+.status-strip__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  padding: var(--space-3) var(--space-6);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.status-strip__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  white-space: nowrap;
+}
+
+.status-strip__label {
+  font-size: 11px;
+  color: var(--foreground-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: var(--fw-medium);
+}
+
+.status-strip__value {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--foreground);
+  font-variant-numeric: tabular-nums;
+}
+
+.status-strip__value--success { color: var(--success); }
+.status-strip__value--warning { color: var(--warning); }
+
+.status-strip__divider {
+  width: 1px;
+  height: 16px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .status-strip__inner {
+    gap: var(--space-5);
+    overflow-x: auto;
+    justify-content: flex-start;
+    scrollbar-width: none;
+  }
+  .status-strip__inner::-webkit-scrollbar { display: none; }
+}

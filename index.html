@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adani Petrochem Digital Hub — Unified Industrial Operations</title>
+  <meta name="description" content="Centralized access to engineering systems, operational tools, analytics platforms, standards, and enterprise workflows for Adani Petrochemicals.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/launcher.css">
+  <link rel="stylesheet" href="css/activity.css">
+  <link rel="stylesheet" href="css/status.css">
+  <link rel="stylesheet" href="css/featured.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/leaders.css">
+  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="css/drawer.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       NAVBAR
+       ═══════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <!-- Brand -->
+      <a href="#" class="navbar__brand">
+        <div class="navbar__logo">
+          <img src="assets/adani_logo.png" alt="Adani Logo" style="width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply;" />
+        </div>
+        <!-- <div class="navbar__brand-text">
+          <span class="navbar__brand-name">Adani Petrochem</span>
+          <span class="navbar__brand-sub">Digital Hub</span>
+        </div> -->
+      </a>
+
+      <!-- Center: Value Chain Pipeline -->
+      <div class="navbar__center">
+        <div class="navbar__pipeline">
+          <span class="navbar__pipeline-step">Coal</span>
+          <span class="navbar__pipeline-flow">
+            <span class="navbar__pipeline-line"></span>
+            <span class="navbar__pipeline-dot"></span>
+          </span>
+          <span class="navbar__pipeline-step">Gasification</span>
+          <span class="navbar__pipeline-flow">
+            <span class="navbar__pipeline-line"></span>
+            <span class="navbar__pipeline-dot"></span>
+          </span>
+          <span class="navbar__pipeline-step">Syngas</span>
+          <span class="navbar__pipeline-flow">
+            <span class="navbar__pipeline-line"></span>
+            <span class="navbar__pipeline-dot"></span>
+          </span>
+          <span class="navbar__pipeline-step">EDC</span>
+          <span class="navbar__pipeline-flow">
+            <span class="navbar__pipeline-line"></span>
+            <span class="navbar__pipeline-dot"></span>
+          </span>
+          <span class="navbar__pipeline-step">VCM</span>
+          <span class="navbar__pipeline-flow">
+            <span class="navbar__pipeline-line"></span>
+            <span class="navbar__pipeline-dot"></span>
+          </span>
+          <span class="navbar__pipeline-step navbar__pipeline-step--end">PVC</span>
+        </div>
+      </div>
+
+      <!-- Right Controls -->
+      <div class="navbar__controls">
+        <div class="navbar__datetime">
+          <span class="navbar__date" id="navDate">--</span>
+          <div class="divider-line"></div>
+          <span class="navbar__clock" id="navClock">--:--:--</span>
+        </div>
+        <button class="navbar__icon-btn" id="appDrawerBtn" aria-label="Apps Menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <div class="hero__grid"></div>
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+      <div class="hero__orb hero__orb--3"></div>
+    </div>
+    <canvas class="hero__particles" id="particleCanvas"></canvas>
+
+    <div class="hero__content">
+      <!-- <p class="hero__eyebrow reveal">Adani Petrochemicals</p> -->
+      <h1 class="hero__title reveal" data-delay="1">
+        Unified <span>Digital Ecosystem</span> for Industrial Operations
+      </h1>
+      <p class="hero__subtitle reveal" style="color:black" data-delay="2">
+        Centralized access to engineering systems, operational tools, analytics platforms, standards, and enterprise workflows.
+      </p>
+      <div class="hero__actions reveal" data-delay="3">
+        <a href="#leaders" class="btn btn--primary">
+          Our Leaders
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </a>
+        <button id="heroOpenDashboardBtn" class="btn btn--outline">
+          Open Dashboard
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       OUR LEADERS
+       ═══════════════════════════════════════════════ -->
+  <section class="section leaders" id="leaders">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__label">Leadership</p>
+        <h2 class="section__title">Our Leaders</h2>
+        <p class="section__subtitle">Visionary leadership driving India's petrochemical transformation through innovation, sustainability, and digital excellence.</p>
+      </div>
+
+      <div class="leaders__grid">
+        <!-- Gautam Adani -->
+        <div class="leader-card reveal">
+          <div class="leader-card__avatar leader-card__avatar--ga">
+            <img src="assets/Gautamadani.jpg" alt="Gautam Adani">
+          </div>
+          <h3 class="leader-card__name">Gautam Adani</h3>
+          <p class="leader-card__role">Chairman, Adani Group</p>
+          <div class="leader-card__divider"></div>
+          <blockquote class="leader-card__quote">
+            The Adani Petrochem Digital Hub represents our commitment to building India's most advanced petrochemical ecosystem. Through digital transformation, we are not just modernizing operations — we are redefining how industrial enterprises create value, drive efficiency, and build a sustainable future for the nation.
+          </blockquote>
+        </div>
+
+        <!-- Jeet Adani -->
+        <div class="leader-card reveal" data-delay="2">
+          <div class="leader-card__avatar leader-card__avatar--ja">
+            <img src="assets/Jeet.png" alt="Jeet Adani">
+          </div>
+          <h3 class="leader-card__name">Jeet Adani</h3>
+          <p class="leader-card__role">Whole Time Director, Adani Group</p>
+          <div class="leader-card__divider"></div>
+          <blockquote class="leader-card__quote">
+            This unified digital platform empowers our teams with real-time intelligence, seamless collaboration, and AI-driven decision-making. It is the foundation upon which we will build next-generation industrial capabilities — connecting people, processes, and technology at an unprecedented scale.
+          </blockquote>
+        </div>
+
+        <!-- Jayant Parimal -->
+        <div class="leader-card reveal" data-delay="4">
+          <div class="leader-card__avatar leader-card__avatar--jp">
+            <img src="assets/Jayant.png" alt="Jayant Parimal">
+          </div>
+          <h3 class="leader-card__name">Jayant Parimal</h3>
+          <p class="leader-card__role">CEO, Adani Petrochemical Ltd.</p>
+          <div class="leader-card__divider"></div>
+          <blockquote class="leader-card__quote">
+            The Digital Hub brings together engineering excellence and operational intelligence under one roof. Every system, every workflow, and every insight is now accessible through a single platform — enabling our engineers and operators to deliver world-class performance with precision and speed.
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       LIVE STATUS STRIP
+       ═══════════════════════════════════════════════ -->
+  <!-- <div class="status-strip">
+    <div class="status-strip__inner">
+      <div class="status-strip__item">
+        <span class="status-dot status-dot--online"></span>
+        <span class="status-strip__label">Systems Online</span>
+        <span class="status-strip__value status-strip__value--success">47 / 48</span>
+      </div>
+      <span class="status-strip__divider"></span>
+      <div class="status-strip__item">
+        <span class="status-dot status-dot--online"></span>
+        <span class="status-strip__label">Active Pipelines</span>
+        <span class="status-strip__value">12</span>
+      </div>
+      <span class="status-strip__divider"></span>
+      <div class="status-strip__item">
+        <span class="status-dot status-dot--warning"></span>
+        <span class="status-strip__label">Maintenance Alerts</span>
+        <span class="status-strip__value status-strip__value--warning">3</span>
+      </div>
+      <span class="status-strip__divider"></span>
+      <div class="status-strip__item">
+        <span class="status-dot status-dot--online"></span>
+        <span class="status-strip__label">Sync Status</span>
+        <span class="status-strip__value status-strip__value--success">Live</span>
+      </div>
+      <span class="status-strip__divider"></span>
+      <div class="status-strip__item">
+        <span class="status-dot status-dot--online"></span>
+        <span class="status-strip__label">Operational Health</span>
+        <span class="status-strip__value status-strip__value--success">98.7%</span>
+      </div>
+    </div>
+  </div> -->
+
+
+
+  <!-- ═══════════════════════════════════════════════
+       QUICK ACCESS / RECENT ACTIVITY
+       ═══════════════════════════════════════════════ -->
+  <section class="section activity" id="activity">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__label">Quick Access</p>
+        <h2 class="section__title">Recent Activity & Workflows</h2>
+        <p class="section__subtitle">Stay updated with your recent systems, active workflows, and team notifications.</p>
+      </div>
+
+      <div class="activity__grid">
+        <!-- Column 1: Recently Accessed -->
+        <div class="activity__col reveal" data-delay="1">
+          <div class="activity__col-header">
+            <h3 class="activity__col-title">Recently Accessed</h3>
+            <a href="#" class="activity__col-action">View All</a>
+          </div>
+          <div class="activity__list">
+            <div class="activity__item">
+              <span class="activity__item-accent activity__item-accent--blue"></span>
+              <div class="activity__item-body">
+                <p class="activity__item-title">DigiNX — P&ID Review Module</p>
+                <div class="activity__item-meta">
+                  <span class="activity__item-time"><i data-lucide="clock" style="width:12px;height:12px;"></i> 12 min ago</span>
+                  <span class="activity__item-status"><span class="status-dot status-dot--online" style="width:5px;height:5px;"></span> Active</span>
+                </div>
+              </div>
+            </div>
+            <div class="activity__item">
+              <span class="activity__item-accent activity__item-accent--green"></span>
+              <div class="activity__item-body">
+                <p class="activity__item-title">Plant Analytics — Throughput Report Q2</p>
+                <div class="activity__item-meta">
+                  <span class="activity__item-time"><i data-lucide="clock" style="width:12px;height:12px;"></i> 1 hr ago</span>
+                  <span class="activity__item-status"><span class="status-dot status-dot--online" style="width:5px;height:5px;"></span> Completed</span>
+                </div>
+              </div>
+            </div>
+            <div class="activity__item">
+              <span class="activity__item-accent activity__item-accent--purple"></span>
+              <div class="activity__item-body">
+                <p class="activity__item-title">Engineering Docs — GA Drawing Rev.3</p>
+                <div class="activity__item-meta">
+                  <span class="activity__item-time"><i data-lucide="clock" style="width:12px;height:12px;"></i> 3 hrs ago</span>
+                  <span class="activity__item-status">Reviewed</span>
+                </div>
+              </div>
+            </div>
+            <div class="activity__item">
+              <span class="activity__item-accent activity__item-accent--amber"></span>
+              <div class="activity__item-body">
+                <p class="activity__item-title">NFA Portal — Budget Approval #2847</p>
+                <div class="activity__item-meta">
+                  <span class="activity__item-time"><i data-lucide="clock" style="width:12px;height:12px;"></i> 5 hrs ago</span>
+                  <span class="activity__item-status"><span class="status-dot status-dot--warning" style="width:5px;height:5px;"></span> Pending</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Active Workflows & Updates -->
+        <div class="activity__col reveal" data-delay="3">
+          <div class="activity__col-header">
+            <h3 class="activity__col-title">Active Workflows</h3>
+            <a href="#" class="activity__col-action">View All</a>
+          </div>
+          <div class="activity__list">
+            <div class="activity__item">
+              <span class="activity__item-accent activity__item-accent--green"></span>
+              <div class="activity__item-body">
+                <p class="activity__item-title">Turnaround Planning — Unit 4 Shutdown</p>
+                <div class="activity__item-meta">
+                  <span class="activity__item-time"><i data-lucide="users" style="width:12px;height:12px;"></i> 8 collaborators</span>
+                  <span class="activity__item-status"><span class="status-dot status-dot--online" style="width:5px;height:5px;"></span> In Progress</span>
+                </div>
+              </div>
+            </div>
+            <div class="activity__item">
+              <span class="activity__item-accent activity__item-accent--blue"></span>
+              <div class="activity__item-body">
+                <p class="activity__item-title">Vendor Qualification — Steel Supply RFQ</p>
+                <div class="activity__item-meta">
+                  <span class="activity__item-time"><i data-lucide="file-text" style="width:12px;height:12px;"></i> 3 bids received</span>
+                  <span class="activity__item-status">Under Review</span>
+                </div>
+              </div>
+            </div>
+            <div class="activity__item">
+              <span class="activity__item-accent activity__item-accent--amber"></span>
+              <div class="activity__item-body">
+                <p class="activity__item-title">Safety Audit — Fire Protection Systems</p>
+                <div class="activity__item-meta">
+                  <span class="activity__item-time"><i data-lucide="shield" style="width:12px;height:12px;"></i> Due May 22</span>
+                  <span class="activity__item-status"><span class="status-dot status-dot--warning" style="width:5px;height:5px;"></span> Upcoming</span>
+                </div>
+              </div>
+            </div>
+            <div class="activity__item">
+              <span class="activity__item-accent activity__item-accent--purple"></span>
+              <div class="activity__item-body">
+                <p class="activity__item-title">System Update — AIMS v3.2 Deployment</p>
+                <div class="activity__item-meta">
+                  <span class="activity__item-time"><i data-lucide="rocket" style="width:12px;height:12px;"></i> Scheduled tonight</span>
+                  <span class="activity__item-status">Queued</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CORE PRODUCTS
+       ═══════════════════════════════════════════════ -->
+  <section class="section products" id="products">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__label">Flagship Deliverables</p>
+        <h2 class="section__title">Core Industrial Products</h2>
+        <p class="section__subtitle">Manufacturing essential materials that form the building blocks for modern infrastructure, agriculture, and daily life.</p>
+      </div>
+
+      <div class="products__grid">
+        <!-- PVC -->
+        <div class="product-card reveal">
+          <div class="product-card__image-wrap">
+            <img src="assets/product_pvc.png" alt="PVC Resin">
+          </div>
+          <div class="product-card__content">
+            <span class="product-card__tag">Polymers</span>
+            <h3 class="product-card__title">Polyvinyl Chloride (PVC)</h3>
+            <p class="product-card__desc">Premium grade suspension PVC resin used extensively in pipes, cables, profiles, and medical applications. Manufactured ensuring the highest purity and thermal stability.</p>
+            <div class="product-card__stats">
+              <div class="product-card__stat">
+                <span class="product-card__stat-value">2,000</span>
+                <span class="product-card__stat-label">KTPA Capacity</span>
+              </div>
+              <div class="product-card__stat" style="text-align: right;">
+                <span class="product-card__stat-value">99.8%</span>
+                <span class="product-card__stat-label">Purity Index</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copper -->
+        <div class="product-card reveal" data-delay="1">
+          <div class="product-card__image-wrap">
+            <img src="assets/product_copper.png" alt="Copper Cathodes">
+          </div>
+          <div class="product-card__content">
+            <span class="product-card__tag">Metals</span>
+            <h3 class="product-card__title">Refined Copper Cathodes</h3>
+            <p class="product-card__desc">LME Grade A copper cathodes produced through state-of-the-art smelting and refining. Essential for India's transition to renewable energy and EV infrastructure.</p>
+            <div class="product-card__stats">
+              <div class="product-card__stat">
+                <span class="product-card__stat-value">500</span>
+                <span class="product-card__stat-label">KTPA Capacity</span>
+              </div>
+              <div class="product-card__stat" style="text-align: right;">
+                <span class="product-card__stat-value">Grade A</span>
+                <span class="product-card__stat-label">LME Certified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chlor-Alkali -->
+        <div class="product-card reveal" data-delay="2">
+          <div class="product-card__image-wrap">
+            <img src="assets/product_chloralkali.png" alt="Chlor-Alkali">
+          </div>
+          <div class="product-card__content">
+            <span class="product-card__tag">Chemicals</span>
+            <h3 class="product-card__title">Chlor-Alkali Suite</h3>
+            <p class="product-card__desc">High-grade Caustic Soda and liquid Chlorine produced via advanced membrane cell technology. A critical foundational chemical for water treatment, alumina, and textiles.</p>
+            <div class="product-card__stats">
+              <div class="product-card__stat">
+                <span class="product-card__stat-value">1,300</span>
+                <span class="product-card__stat-label">KTPA Capacity</span>
+              </div>
+              <div class="product-card__stat" style="text-align: right;">
+                <span class="product-card__stat-value">Zero</span>
+                <span class="product-card__stat-label">Liquid Discharge</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__top">
+        <!-- Brand Column -->
+        <div>
+          <div class="footer__brand-logo">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+              <rect width="32" height="32" rx="7" fill="#09090b"/>
+              <path d="M10 23L16 10L22 23H19L16 17L13 23H10Z" fill="white" opacity="0.95"/>
+            </svg>
+            <span>Adani Petrochem</span>
+          </div>
+          <p class="footer__brand-desc">
+            Powering India's petrochemical future through digital transformation, engineering excellence, and sustainable industrial innovation.
+          </p>
+          <div class="footer__env">
+            <span class="status-dot status-dot--online" style="width:5px;height:5px;"></span>
+            Production &nbsp;·&nbsp; v2.4.1
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer__col-title">Quick Links</h4>
+          <div class="footer__links">
+            <a href="#launcher" class="footer__link">Application Hub</a>
+            <a href="#" class="footer__link">Knowledge Base</a>
+            <a href="#" class="footer__link">API Documentation</a>
+            <a href="#" class="footer__link">Release Notes</a>
+            <a href="#" class="footer__link">Training Portal</a>
+          </div>
+        </div>
+
+        <!-- Support -->
+        <div>
+          <h4 class="footer__col-title">Support</h4>
+          <div class="footer__links">
+            <a href="#" class="footer__link">Help Center</a>
+            <a href="#" class="footer__link">Report an Issue</a>
+            <a href="#" class="footer__link">Service Status</a>
+            <a href="#" class="footer__link">Contact IT</a>
+            <a href="#" class="footer__link">Feedback</a>
+          </div>
+        </div>
+
+        <!-- Policies -->
+        <div>
+          <h4 class="footer__col-title">Policies</h4>
+          <div class="footer__links">
+            <a href="#" class="footer__link">Privacy Policy</a>
+            <a href="#" class="footer__link">Terms of Use</a>
+            <a href="#" class="footer__link">Data Security</a>
+            <a href="#" class="footer__link">Accessibility</a>
+            <a href="#" class="footer__link">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; 2026 Adani Petrochemicals Ltd. All rights reserved.</span>
+        <div class="footer__bottom-links">
+          <a href="#">Powered by Adani Digital</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════
+       APP DRAWER (QUICK ACCESS)
+       ═══════════════════════════════════════════════ -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="app-drawer" id="appDrawer">
+    <div class="app-drawer__header">
+      <h3 class="app-drawer__title">Quick Access</h3>
+      <button class="app-drawer__close" id="appDrawerClose" aria-label="Close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <div class="app-drawer__body" id="drawerList">
+      <!-- Populated by launcher.js -->
+    </div>
+  </aside>
+
+  <!-- Scripts -->
+  <script src="js/launcher.js"></script>
+  <script src="js/main.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
